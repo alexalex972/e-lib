@@ -14,6 +14,10 @@ export class AuthInterceptor implements HttpInterceptor {
         if (req.headers.get('No-Auth') == "True")
             return next.handle(req.clone());
 
+        if(req.method == 'GET'){
+          return next.handle(req.clone());
+        }
+
         if (localStorage.getItem('userToken') != null) {
             const clonedreq = req.clone({
                 headers: req.headers.set("Authorization", "Bearer " + localStorage.getItem('userToken'))
@@ -28,7 +32,7 @@ export class AuthInterceptor implements HttpInterceptor {
                 ));
         }
         else {
-            this.router.navigateByUrl('/login');
+            this.router.navigateByUrl('/welcome');
         }
     }
 }

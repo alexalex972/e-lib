@@ -1,0 +1,19 @@
+<table mdbTable hover="true">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <!-- <th>Description</th> -->
+      <th>Author</th>
+      <th>Year of Publication</th>
+    </tr>
+  </thead>
+  <tbody>
+    <td *ngIf="service.list?.length == 0">There are not recently added books, sign-in/up to add!</td>
+    <tr mdbTableCol *ngFor="let book of service.list">
+      <td>{{book.Title}}</td>
+      <!-- <td>{{book.Description}}</td> -->
+      <td>{{book.Author}}</td>
+      <td>{{book.Publication}}</td>
+    </tr>
+  </tbody>
+</table>

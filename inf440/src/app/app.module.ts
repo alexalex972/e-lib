@@ -15,6 +15,10 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { BooksComponent } from './books/books.component';
+import { BookListComponent } from './books/book-list/book-list.component';
+import { BookComponent } from './books/book/book.component';
+import { BookService } from './shared/book.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,10 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     SignUpComponent,
     SignInComponent,
     HomeComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    BooksComponent,
+    BookComponent,
+    BookListComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +40,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     RouterModule.forRoot(appRoutes),
     MDBBootstrapModule.forRoot()
   ],
-  providers: [UserService, AuthGuard ,
+  providers: [UserService, BookService, AuthGuard ,
     {
       provide : HTTP_INTERCEPTORS,
       useClass : AuthInterceptor,

@@ -13,6 +13,10 @@ export class SignInComponent implements OnInit {
   constructor(private userService : UserService,private router : Router) { }
 
   ngOnInit() {
+    if (localStorage.getItem('userToken') != null) {
+      this.userService.loggedIn.next(true)
+      this.router.navigate(['/welcome']);
+    }
   }
 
   OnSubmit(userName,password){

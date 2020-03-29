@@ -98,7 +98,6 @@ C:\Users\Aleks Mishev\Documents\INF440\WebAPI\WebAPI\bin\Microsoft.AI.Dependency
 C:\Users\Aleks Mishev\Documents\INF440\WebAPI\WebAPI\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Aleks Mishev\Documents\INF440\WebAPI\WebAPI\bin\Microsoft.AI.Web.xml
 C:\Users\Aleks Mishev\Documents\INF440\WebAPI\WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Aleks Mishev\Documents\INF440\WebAPI\WebAPI\obj\Debug\WebAPI.csprojAssemblyReference.cache
 C:\Users\Aleks Mishev\Documents\INF440\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CoreCompileInputs.cache
 C:\Users\Aleks Mishev\Documents\INF440\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CopyComplete
 C:\Users\Aleks Mishev\Documents\INF440\WebAPI\WebAPI\obj\Debug\WebAPI.dll
@@ -128,3 +127,4 @@ C:\Users\Aleks Mishev\Documents\INF440\WebAPI\WebAPI\bin\Microsoft.Owin.Security
 C:\Users\Aleks Mishev\Documents\INF440\WebAPI\WebAPI\obj\Debug\WebAPI.Migrations.addPhone.resources
 C:\Users\Aleks Mishev\Documents\INF440\WebAPI\WebAPI\obj\Debug\WebAPI.Migrations.addPhone2.resources
 C:\Users\Aleks Mishev\Documents\INF440\WebAPI\WebAPI\obj\Debug\WebAPI.Migrations.addPhone3.resources
+C:\Users\Aleks Mishev\Documents\INF440\WebAPI\WebAPI\obj\Debug\WebAPI.csprojAssemblyReference.cache
