@@ -1,11 +1,31 @@
-<nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">e-Library system</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li *ngIf="!isLoggedIn"> <a class="nav-link" routerLink="login">Login</a></li>
-      <li *ngIf="!isLoggedIn"> <a class="nav-link" routerLink="signup">Register</a></li>
-      <li *ngIf="isLoggedIn"> <a class="nav-link" (click)="onLogout()">Logout</a></li>
+<!--Navbar-->
+<div class="container">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark cyan" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#">e-Library system</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" *ngIf="!isLoggedIn">
+        <a class="nav-link waves-light" routerLink="login" mdbWavesEffect><mdb-icon far icon="user"></mdb-icon>Login</a>
+      </li>
+      <li class="nav-item" *ngIf="!isLoggedIn">
+        <a class="nav-link waves-light" routerLink="signup" mdbWavesEffect><mdb-icon fas icon="user"></mdb-icon> Register</a>
+      </li>
+      <li class="nav-item" *ngIf="isLoggedIn">
+        <a class="nav-link waves-light" mdbWavesEffect (click)="onLogout()"><mdb-icon fas icon="sign-in-alt"></mdb-icon> Logout</a>
+      </li>
+
     </ul>
-  </div>
-</nav>
+    <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+</div>
+<!--/.Navbar-->
 <router-outlet></router-outlet>

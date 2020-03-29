@@ -14,7 +14,6 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
@@ -32,7 +31,6 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     HttpClientModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    NgbModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [UserService, AuthGuard ,

@@ -1,38 +1,50 @@
-<form class="col s12 white" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
-  <div class="row">
-    <div class="input-field col s6">
-      <input class="validate" type="password" name="Password" #Password="ngModel" ngModel [(ngModel)]="user.Password"
-        required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$">
-      <label
-        [attr.data-error]="Password.errors!=null?(Password.errors.required?'Required field!':'Minimum 6 characters, at least one letter and one number:'):''">Password</label>
+<div class="container">
+<!-- Default form register -->
+<form class="text-center border border-light p-5" #userRegistrationForm="ngForm"
+  (ngSubmit)="OnSubmit(userRegistrationForm)">
+
+  <p class="h4 mb-4">Sign up</p>
+
+  <div class="form-row mb-4">
+    <div class="col">
+      <!-- First name -->
+      <input type="text" name="FirstName" #FirstName="ngModel" ngModel [(ngModel)]="user.FirstName" class="form-control"
+        placeholder="First name">
+    </div>
+    <div class="col">
+      <!-- Last name -->
+      <input type="text" name="LastName" #LastName="ngModel" ngModel [(ngModel)]="user.LastName" class="form-control"
+        placeholder="Last name">
     </div>
   </div>
-  <div class="row">
-    <div class="input-field col s12">
-      <input class="validate" type="text" name="Email" #Email="ngModel" ngModel [(ngModel)]="user.Email"
-        [pattern]="emailPattern">
-      <label data-error="Invalid email!">Email</label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="input-field col s6">
-      <input type="text" name="PhoneNumber" pattern="\d{4}[\-]\d{3}[\-]\d{3}" #PhoneNumber="ngModel" ngModel [(ngModel)]="user.PhoneNumber">
-      <label>Phone Number (e.g 0886-085-901)</label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="input-field col s6">
-      <input type="text" name="FirstName" #FirstName="ngModel" ngModel [(ngModel)]="user.FirstName">
-      <label>First Name</label>
-    </div>
-    <div class="input-field col s6">
-      <input type="text" name="LastName" #LastName="ngModel" ngModel [(ngModel)]="user.LastName">
-      <label>Last Name</label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="input-field col s12">
-      <button [disabled]="!userRegistrationForm.valid" class="btn-large btn-submit" type="submit">Submit</button>
-    </div>
-  </div>
+
+  <!-- E-mail -->
+  <input type="text" name="Email" #Email="ngModel" ngModel [(ngModel)]="user.Email" [pattern]="emailPattern"
+    class="form-control mb-4" placeholder="E-mail">
+
+  <!-- Password -->
+  <input type="password" class="form-control" placeholder="Password" name="Password" #Password="ngModel" ngModel
+    [(ngModel)]="user.Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+    aria-describedby="defaultRegisterFormPasswordHelpBlock">
+  <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+    Minimum 6 characters, at least one letter and one number
+  </small>
+  <!-- Phone number -->
+  <input type="text" name="PhoneNumber" pattern="\d{4}[\-]\d{3}[\-]\d{3}" #PhoneNumber="ngModel" ngModel
+    [(ngModel)]="user.PhoneNumber" class="form-control" placeholder="Phone number"
+    aria-describedby="defaultRegisterFormPhoneHelpBlock">
+  <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+    Phone Number (e.g 0886-085-901)
+  </small>
+  <!-- Sign up button -->
+  <button [disabled]="!userRegistrationForm.valid" mdbBtn color="info" block="true" class="my-4" type="submit">Sign
+    in</button>
+
+  <hr>
+
+  <p>By clicking
+    <em>Sign up</em> you agree to our
+    <a href="" target="_blank">terms of service</a></p>
+
 </form>
+</div>

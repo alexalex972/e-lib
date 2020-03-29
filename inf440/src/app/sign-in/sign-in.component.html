@@ -1,23 +1,20 @@
-  
-<div *ngIf="isLoginError" class="red-text center error-message">
-  <i class="material-icons">error</i> Incorrect username or password
-</div>
-<form #loginForm="ngForm" class="col s12 white" (ngSubmit)="OnSubmit(UserName.value, Password.value)">
- <div class="row">
-   <div class="input-field col s12">
-     <i class="material-icons prefix">account_circle</i>
-     <input type="text" #UserName ngModel name="UserName" placeholder="Email" required>
-   </div>
- </div>
- <div class="row">
-    <div class="input-field col s12">
-      <i class="material-icons prefix">vpn_key</i>
-      <input type="password" #Password ngModel name="Password" placeholder="Password" required>
-    </div>
-  </div>
-  <div class="row">
-      <div class="input-field col s12">
-        <button [disabled]="!loginForm.valid" class="btn-large btn-submit" type="submit">Login</button>
-      </div>
-    </div>
+<div class="container">
+<form #loginForm="ngForm" class="text-center border border-light p-5"
+  (ngSubmit)="OnSubmit(UserName.value, Password.value)">
+
+  <p class="h4 mb-4">Sign in</p>
+
+  <input type="text" #UserName ngModel name="UserName" placeholder="Email" required class="form-control mb-4">
+
+  <input type="password" #Password ngModel name="Password" placeholder="Password" required class="form-control mb-4">
+
+  <button mdbBtn [disabled]="!loginForm.valid" color="info" block="true" class="my-4" type="submit">Login</button>
+
+  <p>Not a member?
+    <a routerLink="../signup">Register</a>
+  </p>
+  <p *ngIf="isLoginError" class="red-text center error-message" style="    top: 0px;
+  position: relative;"><i class="material-icons">error</i> Incorrect username or password</p>
+
 </form>
+</div>
