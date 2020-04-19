@@ -19,6 +19,7 @@ import { BooksComponent } from './books/books.component';
 import { BookListComponent } from './books/book-list/book-list.component';
 import { BookComponent } from './books/book/book.component';
 import { BookService } from './shared/book.service';
+import { EditBookComponent } from './books/edit-book/edit-book.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { BookService } from './shared/book.service';
     BooksComponent,
     BookComponent,
     BookListComponent,
+    EditBookComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-<table mdbTable hover="true">
+<table mdbTable hover="true" class="container">
   <thead>
     <tr>
       <th>Title</th>
@@ -14,6 +14,10 @@
       <!-- <td>{{book.Description}}</td> -->
       <td>{{book.Author}}</td>
       <td>{{book.Publication}}</td>
+      <td *ngIf="isLoggedIn"><button (click)="onEdit(book)"
+          class="btn btn-sm btn-outline-primary">Edit</button></td>
+      <td *ngIf="isLoggedIn"><button (click)="onDelete(book.BookID, book.Title)"
+          class="btn btn-sm btn-outline-danger">Delete</button></td>
     </tr>
   </tbody>
 </table>
