@@ -25,8 +25,21 @@ namespace WebAPI.Controllers
             return lastFiveBooks;
         }
 
+        [HttpGet]
+        [Route("api/search/{term}")]
+        [AllowAnonymous]
+        public IQueryable<Book> Search(string term)
+        {
+            var searchResult = db.Books.Where(o => o.Title.Contains(term) ||
+            o.Author.Contains(term) ||
+            o.Description.Contains(term));
+
+            return searchResult;
+        }
+
         // GET: api/Books/5
         [ResponseType(typeof(Book))]
+        [AllowAnonymous]
         public IHttpActionResult GetBook(int id)
         {
             Book book = db.Books.Find(id);
@@ -82,6 +95,7 @@ namespace WebAPI.Controllers
 
         // DELETE: api/Books/5
         [ResponseType(typeof(Book))]
+        [AllowAnonymous]
         public IHttpActionResult DeleteBook(int id)
         {
             Book book = db.Books.Find(id);

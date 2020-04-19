@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Book } from './book.model';
 import { HttpClient } from '@angular/common/http';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators'
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +29,16 @@ export class BookService {
 
   putEmployee(formData: Book) {
     return this.http.put(this.rootURL + '/Books/' + formData.BookID, formData);
+  }
 
+  search(terms: Observable<string>) {
+    return terms.pipe(debounceTime(800),
+    distinctUntilChanged(),
+    switchMap(term => this.searchEntries(term)))
+  }
+
+  searchEntries(searchTerm){
+    return this.http.get(this.rootURL + '/search/' + searchTerm)
   }
 
 }

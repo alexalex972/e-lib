@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="jumbtron">
+    <hr>
+    <input class="form-control mr-sm-2" type="text" placeholder="Search" (keyup)="searchTerm$.next($event.target.value)">
+    <hr>
+    <div class="row">
+      <div class="col-md-12">
+        <table mdbTable hover="true" mdbTableScroll scrollX="true" maxWidth="100%">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <!-- <th>Description</th> -->
+              <th>Author</th>
+              <th>Year of Publication</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <td *ngIf="results?.length == 0">There are not recently added books, sign-in/up to add!</td>
+            <tr mdbTableCol *ngFor="let book of sortBy('occurances')">
+              <td [innerHTML]="book.Title | highlight : searchTerm"></td>
+              <td [innerHTML]="book.Author | highlight : searchTerm"></td>
+              <td [innerHTML]="book.Publication"></td>
+              <td [innerHTML]="book.Description | highlight : searchTerm"></td>
+              <td *ngIf="isLoggedIn"><button (click)="onEdit(book)"
+                  class="btn btn-sm btn-outline-primary">Edit</button></td>
+              <td *ngIf="isLoggedIn"><button (click)="onDelete(book.BookID, book.Title)"
+                  class="btn btn-sm btn-outline-danger">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>

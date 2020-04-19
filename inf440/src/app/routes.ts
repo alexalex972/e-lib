@@ -7,6 +7,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { BooksComponent } from './books/books.component';
 import { EditBookComponent } from './books/edit-book/edit-book.component';
+import { SearchComponent } from './search/search.component';
 
 export const appRoutes: Routes = [
   { path: 'books', component: BooksComponent, canActivate: [AuthGuard] },
@@ -18,6 +19,9 @@ export const appRoutes: Routes = [
   },
   {
     path: 'edit-book', component: EditBookComponent
+  },
+  {
+    path: 'search', component: SearchComponent
   },
   {
     path: 'welcome', component: WelcomeComponent,
